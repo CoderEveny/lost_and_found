@@ -1,0 +1,21 @@
+<view class="search-container">
+  <!-- 返回栏 -->
+  <back />
+  <!-- 搜索框 -->
+  <mp-searchbar ext-class="{{extClass}}" focus="{{true}}" 
+  value="{{value}}" bindinput="inputChange" bindclear="clear">
+    <view class="weui-search-bar__cancel-btn {{extClass.cancleTextClass}}" bindtap="searchLoss">搜索</view>
+  </mp-searchbar>
+  <!-- 内容展示 -->
+  <scroll-view class="scroll-wrap" scroll-y 
+  bindscrolltolower="loadMore">
+    <block wx:if="{{list.length == 0}}">
+      <view class="none">~暂无信息~</view>
+    </block>
+    <block wx:if="{{list.length != 0}}">
+      <loss list="{{list}}"></loss>
+    </block>
+  </scroll-view>
+  <!-- 轻提示 -->
+  <mp-loading show="{{loadingshow}}" />
+</view>

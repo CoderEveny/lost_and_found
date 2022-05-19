@@ -1,0 +1,38 @@
+<view class="index-container">
+  <!-- 导航栏标题 -->
+  <NavBar />
+
+  <!-- 功能模块 -->
+  <view class="module-wrap">
+    <!-- 小模块 -->
+    <view class="small-wrap">
+      <!-- 发布告示 -->
+      <view class="com-module small" bindtap="showBtn">
+        <text class="iconfont icon-fabu" />
+        发布告示
+      </view>
+      <!-- 失物公告板 -->
+      <view class="com-module small" bindtap="switchTab"
+      data-index="1" data-path="/pages/bulletin/bulletin">
+        <text class="iconfont icon-gonggao" />
+        失物公告栏
+      </view>
+    </view>
+    <!-- 聊天消息 -->
+    <view class="big-wrap">
+      <view class="com-module" bindtap="switchTab"
+      data-index="2" data-path="/pages/message/message">
+        <text class="iconfont icon-message" />
+        聊天消息
+      </view>
+    </view>
+  </view>
+  <!-- 弹出层 -->
+  <mp-dialog show="{{show}}" mask-closable="{{true}}" 
+  titleShow="{{false}}" buttonShow="{{false}}">
+    <view class="button-choice">
+      <view class="button-finding" bindtap="toPublish" data-type="finding">寻找中</view>
+      <view class="button-found" bindtap="toPublish" data-type="found">已发现</view>
+    </view>
+  </mp-dialog>
+</view>

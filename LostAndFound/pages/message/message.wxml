@@ -1,0 +1,32 @@
+<view class="msg-container">
+  <!-- logo -->
+  <NavBar navBarH="50px" fontSize="28px" isShow="none"></NavBar>
+
+  <!--聊天列表  -->
+  <view class="msg-wrap">
+    <!-- 标题 -->
+    <view class="msg-head-title">聊天列表</view>
+    <!-- 聊天成员列表 -->
+    <scroll-view class="msg-members-list" scroll-y bindrefresherrefresh="refresh" refresher-triggered="{{triggered}}"
+   bindscrolltolower="loadMore" scroll-top='{{topNum}}' refresher-enabled="true">
+      <!-- 成员列表子元素 -->
+      <view class="msg-list-item" bindtap="handleToChat" 
+      data-roomid="{{item.roomID}}" data-receiveid="{{item.uid}}"
+      wx:for="{{list}}" wx:key="uid">
+        <!-- 成员头像 -->
+        <view class="msg-list-item-avatar">
+          <image mode="scaleToFill" src="{{item.user_avatar}}"/>
+        </view>
+        <!-- 成员主要信息 -->
+        <view class="msg-list-item-info">
+          <text>{{item.user_nickname}}</text>
+          <!-- <text>泥猴！shjahfkdahskjhakjhjskhfjkshhdkfshskjdhksjfh</text> -->
+        </view>
+        <wxs src='/utils/utils.wxs' module='filter' />
+        <text class="msg-list-item-time">{{filter.formatTime(item.create_date,'MM-dd hh:mm')}}</text>
+      </view>
+    </scroll-view>
+    <!-- 轻提示 -->
+   <mp-loading show="{{loadingshow}}" />
+  </view>
+</view>

@@ -1,0 +1,9 @@
+/* 为了使组件样式独立于页面 */
+/* 引入字体图标 */
+@import "./iconfont.wxss";
+
+view,navigator,text,image {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

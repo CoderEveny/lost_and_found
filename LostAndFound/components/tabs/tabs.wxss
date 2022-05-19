@@ -1,0 +1,19 @@
+.tabs-container {
+  position: sticky;
+  top: 0;
+}
+.tabs-title {
+  display: flex;
+  box-shadow: 0 15rpx 8rpx rgba(0, 0, 0, 0.4);
+}
+.tabs-title .title-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15rpx 0;
+  flex: 1;
+  font-weight: bold;
+}
+.tabs-title .active {
+  border-bottom: 5rpx solid currentColor;
+}

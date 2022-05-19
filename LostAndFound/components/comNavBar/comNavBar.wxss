@@ -1,0 +1,76 @@
+/* 为了使组件样式独立于页面 */
+/* 引入字体图标 */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 2715938 */
+  src: url('//at.alicdn.com/t/font_2715938_5fegjvei338.woff2?t=1628495677105') format('woff2'), url('//at.alicdn.com/t/font_2715938_5fegjvei338.woff?t=1628495677105') format('woff'), url('//at.alicdn.com/t/font_2715938_5fegjvei338.ttf?t=1628495677105') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-xiangqing:before {
+  content: "\e634";
+}
+.icon-ditu:before {
+  content: "\e68b";
+}
+.icon-dianhua:before {
+  content: "\e8ad";
+}
+.icon-kaoqin:before {
+  content: "\e7f5";
+}
+.icon-zuojiantou:before {
+  content: "\e609";
+}
+.icon-V:before {
+  content: "\e728";
+}
+.icon-xiaoxi:before {
+  content: "\e63b";
+}
+.icon-shouye:before {
+  content: "\e61c";
+}
+.icon-gonggao:before {
+  content: "\e626";
+}
+.icon-fabu:before {
+  content: "\e605";
+}
+.icon-set-full2:before {
+  content: "\e979";
+}
+view,
+navigator,
+text,
+image {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.statusBar {
+  width: 100%;
+  background: #353b47;
+}
+.nav-bar-wrap {
+  width: 100vw;
+  display: flex;
+  align-items: flex-end;
+  background: var(--themeColor);
+}
+.nav-bar-title {
+  color: var(--themeLetterColor);
+  font-family: 'Courier New', Courier, monospace;
+  font-style: oblique;
+  margin-left: 30rpx;
+}
+.chinese-title {
+  color: var(--themeLetterColor);
+  margin-left: 110rpx;
+  font-size: 45rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "NavBar": "/components/comNavBar/comNavBar",
+    "tabs": "/components/tabs/tabs",
+    "loss": "/components/loss/loss",
+    "mp-loading": "/ui/weui-miniprogram/loading/loading"
+  },
+  "disableScroll": true
+}

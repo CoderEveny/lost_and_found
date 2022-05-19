@@ -1,0 +1,21 @@
+<view class="login-out-container">
+  <NavBar></NavBar>
+  <form class="login-inner-container" bindsubmit="handleToLogin">
+    <view class="login-wrap">
+      <view class="login-title">用户登录</view>
+      <view class="login-box">
+        <input type="text" name="useraccount"/>
+        <text>账 号：</text>
+      </view>
+      <view class="login-box">
+        <input type="password" name="password"/>
+        <text>密 码：</text>
+      </view>
+      <view>
+        <button form-type="submit" class="btn-com login-btn">登录</button>
+        <text class="btn-com weixin-btn" bindtap="getUserProfile">微信登录</text>
+      </view>
+    </view>
+    <i-toast id="toast" />
+  </form>
+</view>

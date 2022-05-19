@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "NavBar": "/components/comNavBar/comNavBar",
+    "mp-dialog": "/ui/weui-miniprogram/dialog/dialog"
+  }
+}

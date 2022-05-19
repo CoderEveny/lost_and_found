@@ -1,0 +1,80 @@
+<view class="publish-container">
+  <!-- 返回栏 -->
+  <back bind:back="clearImg"/>
+  <!-- 内容发布框 -->
+  <scroll-view class="scroll-wrap" scroll-y>
+    <view class="publish-title">
+      <text class="iconfont icon-fabu">{{type == 'finding' ? '寻物' : '拾物'}}告示</text>
+    </view>
+    <form class="publish-wrap" bindsubmit="handleSubmit" bindreset="handleReset">
+      <!-- 照片与基本信息块 -->
+      <view class="publish-top">
+        <!-- 上传照片 -->
+        <view class="uploader-cell">
+          <view class='uploader-item' wx:if="{{showPic}}">
+            <icon bindtap="clearImg" type="clear" size="20" color="#f00" />
+            <image bindtap="previewImage" src="{{picPath}}" mode="widthFix"></image>
+          </view>
+          <view class='uploader' bindtap="handleToCropper" wx:if="{{!showPic}}">
+            点击添加图片
+          </view>
+        </view>
+        <!-- 基本信息 -->
+        <view class="publish-info">
+          <view class="input-box">
+            <text>物品名称：</text>
+            <input type="text" name="name" value="{{temp}}"/>
+          </view>
+          <view class="radio-group">
+            <view class="radio-title">
+              物品状态：<radio color="#03e9f4" value="{{type == 'finding' ? 0 : 1}}" name="status" checked/>
+              {{type == 'finding' ? '寻找中': '已发现'}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 详情栏 -->
+      <view class="publish-main">
+        <view class="input-box">
+          <view>
+            <text class="iconfont icon-ditu">{{currentIndex === 1 ? '发现' : '丢失'}}地点：</text>
+            <text>{{currentIndex === 1 ? '' : '非'}}必填</text>
+          </view>
+          <input type="text" placeholder="如：教学楼-403" name="place" value="{{temp}}"/>
+        </view>
+        <view class="input-box">
+          <view>
+            <text class="iconfont icon-kaoqin">{{currentIndex === 1 ? '发现' : '丢失'}}日期：</text>
+            <text>{{currentIndex === 1 ? '' : '非'}}必填</text>
+          </view>
+        </view>
+        <!-- 选择日期 -->
+        <picker class="date-choose " mode="date" value="{{tempdate}}" name="date"
+          start="2021-09-01" end="2080-09-01" bindchange="bindDateChange">
+          <view class="picker">日期：<text>{{tempdate}}</text></view>
+        </picker>
+        <view class="input-box">
+          <view>
+            <text class="iconfont icon-dianhua">联系方式:</text>
+            <text>必填</text>
+          </view>
+          <input type="number" placeholder="如QQ:xxx/电话:xxx/微信:xxx等" name="contact" value="{{temp}}"/>
+        </view>
+        <view class="publish-detail">
+          <view>物品详情：<text class="p-detail-no">*非必填</text></view>
+          <textarea maxlength="250" placeholder="请输入详细描述" name="desc" value="{{temp}}"></textarea>
+        </view>
+      </view>
+      <view class="publish-btn">
+        <button form-type="reset">重置</button>
+        <button form-type="submit">提交</button>
+      </view>
+    </form>
+    <!-- 4.是否确定修改 -->
+    <mp-dialog show="{{sureShow}}" buttons="{{buttons}}" mask-closable="{{false}}" 
+    bindbuttontap="uploadBulletin">
+      是否确定发布告示？
+    </mp-dialog>
+  </scroll-view>
+  <i-toast id="toast" />
+</view>

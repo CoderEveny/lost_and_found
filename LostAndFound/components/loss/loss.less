@@ -1,0 +1,65 @@
+@import "../../style/componentsStyle.wxss";
+
+.show-bulletin-container {
+  width: 100vw;
+  // height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loss-item {
+  width: 46%;
+  height: 475rpx;
+  margin: 20rpx 10rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.loss-title {
+  width: 100%;
+  height: 50rpx;
+  margin: 8rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .iconfont {
+    font-size: 56rpx;
+  }
+  .loss-name {
+    text-align: center;
+    padding-left: 4rpx;
+    margin: 0 10rpx;
+    font-size: 28rpx;
+    flex: 1;
+  }
+  .loss-tag {
+    width: 65rpx;
+    font-size: 18rpx;
+    color: #FA541C;
+    font-weight: bolder;
+  }
+}
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.loss-img {
+  width: 330rpx;
+  height: 250rpx;
+  overflow: hidden;
+  margin: 2%;
+  image {
+    width: 100%;
+    height: 100%;
+  }
+}
+.loss-info {
+  display: flex;
+  flex-direction: column;
+  text {
+    font-size: 26rpx;
+    margin: 5rpx 10rpx;
+  }
+}
+

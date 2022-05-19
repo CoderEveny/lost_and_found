@@ -1,0 +1,35 @@
+/**
+ * 封装日期格式化函数
+ * 
+ * @param timeStamp 时间戳
+ * @param format  时间格式
+ * @returns 
+ */
+ var filter = {
+  formatTime: function (timeStamp,model) {
+    //不能使用 new Date()
+      var time = getDate(timeStamp);
+      var year = time.getFullYear();
+      var month = time.getMonth() + 1;
+      var date = time.getDate();
+      var hour = time.getHours();
+      var minute = time.getMinutes();
+      var second = time.getSeconds();
+      month = month < 10 ? "0" + month : month;
+      date = date < 10 ? "0" + date : date;
+      hour = hour < 10 ? "0" + hour : hour;
+      minute = minute < 10 ? "0" + minute : minute;
+      second = second < 10 ? "0" + second : second;
+      if(model == 'yyyy-MM-dd') {
+        return year + "-" + month + "-" + date + " "
+      } else if(model == 'MM-dd hh:mm'){
+        return month + "-" + date + " " + hour + ":" + minute;
+      } else {
+        return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+      }   
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  formatTime: filter.formatTime
+}

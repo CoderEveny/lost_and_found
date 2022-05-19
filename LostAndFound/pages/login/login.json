@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "NavBar": "/components/comNavBar/comNavBar",
+    "i-toast": "/ui/iview-weapp/dist/toast/index"
+  }
+}

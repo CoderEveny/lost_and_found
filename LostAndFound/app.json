@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/bulletin/bulletin",
+    "pages/publish/publish",
+    "pages/profile/profile",
+    "pages/message/message"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "name": "packageA",
+      "pages": [
+        "pages/lossdetail/lossdetail",
+        "pages/chatpage/chatpage",
+        "pages/cropper/cropper",
+        "pages/editprofile/editprofile",
+        "pages/search/search"
+      ],
+      "independent": false
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/bulletin/bulletin",
+        "text": "公告栏"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

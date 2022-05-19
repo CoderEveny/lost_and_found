@@ -1,0 +1,76 @@
+<view class="loss-detail-container">
+  <!-- 返回栏 -->
+  <back />
+  <!-- 发布者信息栏 -->
+  <view class="publish-info">
+    <image class="avatar_style" src="{{lossInfo.user_avatar}}" mode="scaleToFill"/>
+    <text class="info-nickname">{{lossInfo.user_nickname}}</text>
+    <text class="into-isReview">{{lossInfo.isReview == 0 ? "审核中": ""}}</text>
+    <text class="into-isTake">{{lossInfo.isTake == 0 ? "": "已被揭取"}}</text>
+  </view>
+  <!-- 内容区 -->
+  <scroll-view scroll-y>
+    <view class="loss-detail-wrap">
+      <!-- 图片 -->
+      <view class="loss-image">
+        <image src="{{lossInfo.loss_pic}}" mode="scaleToFill" />
+      </view>
+      <!-- 标题 -->
+      <wxs src='/utils/utils.wxs' module='filter' />
+      <view class="loss-label" >
+        <text class="loss-label-title">{{lossInfo.loss_status == 0 ? '寻物' : '拾物'}}启示</text>
+        <text class="loss-label-date">发布日期：{{filter.formatTime(lossInfo.publish_date)}}</text>
+      </view>
+      
+      <!-- 失物信息 -->
+      <view class="loss-desc">
+        <view class="reason-height" wx:if="{{lossInfo.isReview == 2}}">
+          <text class="loss-desc-title iconfont icon-fabu">审核拒绝理由：</text>
+          <text>{{lossInfo.review_reason}}</text>
+        </view>
+        <view>
+          <text class="loss-desc-title iconfont icon-V">物品名称：</text>
+          <text>{{lossInfo.loss_name}}</text>
+        </view>
+        <view>
+          <text class="loss-desc-title iconfont icon-ditu">地点：</text>
+          <text>{{lossInfo.loss_place ? lossInfo.loss_place : '暂无丢失地点'}}</text>
+        </view>
+        <view>
+          <text class="loss-desc-title iconfont icon-kaoqin">{{lossInfo.loss_status == 0 ? '丢失' : '发现'}}日期：</text>
+          <text>{{lossInfo.loss_date ? lossInfo.loss_date : '暂无丢失日期'}}</text>
+        </view>
+         <view>
+          <text class="loss-desc-title iconfont icon-dianhua">联系方式：</text>
+          <text>{{lossInfo.loss_contact}}</text>
+        </view>
+        <view>
+          <text class="loss-desc-title iconfont icon-xiaolian">告示揭取者：</text>
+          <text>{{lossInfo.receiver_nickname ? lossInfo.receiver_nickname : '暂无揭取者'}}</text>
+          <view style="display: inline" wx:if="{{lossInfo.receiver_uid != 0}}">
+            <image class="avatar_style" src="{{lossInfo.receiver_avatar}}" mode="scaleToFill" />
+          </view>
+        </view>
+        <view class="desc-height">
+          <text class="loss-desc-title iconfont icon-xiangqing">物品描述：</text>
+          <text>{{lossInfo.loss_desc ? lossInfo.loss_desc : '暂无详细信息'}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 联系区 -->
+  <view class="loss-bottom-btn">
+    <text class="iconfont icon-message loss-chat" wx:if="{{isOwn}}" bindtap="toChat">发送消息</text>
+    <text class="iconfont icon-diamond loss-take" wx:if="{{isOwn && lossInfo.isTake == 0}}" bindtap="openDialog" data-type="receive">揭取告示</text>
+    <text class="iconfont icon-V loss-contact" wx:if="{{!isOwn && lossInfo.loss_status !=2 && lossInfo.isReview==1 && lossInfo.isTake==1}}" bindtap="openDialog" data-type="fin">完成告示</text>
+    <text class="iconfont icon-V loss-del" wx:if="{{!isOwn}}" bindtap="openDialog" data-type="del">删除告示</text>
+  </view>
+  <!-- 轻提示 -->
+  <i-toast id="toast" />
+  <!-- 对话框组 -->
+  <mp-dialog wx:for="{{dialogs}}" wx:key="type" 
+    show="{{item.show}}" buttons="{{buttons}}" mask-closable="{{false}}" 
+    bindbuttontap="updateData" data-type="{{item.type}}">
+    {{item.content}}
+  </mp-dialog>
+</view>

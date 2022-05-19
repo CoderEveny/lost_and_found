@@ -1,0 +1,24 @@
+<view class="chat-container">
+  <!-- 返回栏 -->
+  <back>
+    <text class="chat-name">{{otherInfo.user_nickname}}</text>
+  </back>
+  <!-- 展示消息 -->
+  <scroll-view class="chat-record-wrap" scroll-y>
+    <view class="chat-item" wx:for="{{chats}}" wx:key="_id">
+      <view class="chat-user-com {{item.uid == ownInfo.uid ? 'chat-user-own' : 'chat-user-other'}}">
+        <image src="{{otherInfo.user_avatar}}" mode="aspectFill" wx:if="{{item.uid != ownInfo.uid}}" />
+        <view class="{{item.uid == ownInfo.uid ? 'contact-own' : 'contact-other'}} contact-com">
+          {{item.textContent}}
+        </view>
+        <image src="{{ownInfo.user_avatar}}" mode="aspectFill" wx:if="{{item.uid == ownInfo.uid}}"/>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 发送消息 -->
+  <view class="send-msg-wrap">
+    <input type="text" bindinput="bindKeyInput" 
+    placeholder="发个消息呗" value="{{tempmsg}}"/>
+    <button bindtap="onSendMsg">发送</button>
+  </view>
+</view>

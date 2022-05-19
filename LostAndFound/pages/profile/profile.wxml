@@ -1,0 +1,48 @@
+<view class="profile-container">
+  <!-- 返回栏 -->
+  <back />
+  <!-- 背景 -->
+  <view class="user-background">
+    <image src="/static/normalBackground.png" mode="widthFix" />
+  </view>
+  <!-- 个人信息栏 -->
+  <view class="profile-wrap">
+    <view class="profile-info">
+      <view class="user-headImg">
+        <image src="{{userInfo.user_avatar}}" mode="aspectFill"></image>
+      </view>
+      <view class="user-info">
+        <text class="user-name">{{userInfo.user_nickname}}</text>
+        <text class="user-id">UID: {{userInfo.uid}}</text>
+        <view class="user-edit" bindtap="handleToChange">编辑资料</view>
+      </view>
+    </view>
+    <view class="user-desc">
+      <text>{{userInfo.user_desc}}</text>
+    </view>
+  </view>
+  <!-- tabs -->
+  <tabs tabs="{{tabs}}" bindtabsItemChange="tabsItemChange" 
+  tabsStyle="{{tabsStyle}}">
+    <scroll-view class="scroll-wrap" scroll-y bindrefresherrefresh="refresh" style="height:calc(100vh - {{180+statusbar}}rpx)"
+    scroll-top='{{topNum}}' refresher-triggered="{{triggered}}" refresher-enabled="true">
+      <block wx:if="{{tabs[0].isActive && lossList.ongoing.list.length > 0}}">
+          <loss list="{{lossList.ongoing.list}}" itemBgColor="#243b61" itemElseBgColor="#f4f4f4"></loss>
+      </block>
+      <block wx:if="{{tabs[1].isActive && lossList.done.list.length > 0}}">
+        <loss list="{{lossList.done.list}}" itemBgColor="#243b61" itemElseBgColor="#f4f4f4"></loss>
+      </block>
+      <block wx:if="{{tabs[2].isActive && lossList.take.list.length > 0}}">
+        <loss list="{{lossList.take.list}}" itemBgColor="#2B0A41" itemElseBgColor="#f4f4f4"></loss>
+      </block>
+      <block wx:if="{{tabs[3].isActive && lossList.reject.list.length > 0}}">
+        <loss list="{{lossList.reject.list}}" itemBgColor="#4B090E" itemElseBgColor="#f4f4f4"></loss>
+      </block>
+      <block wx:else>
+        <view class="no-info">~暂无信息~</view>
+      </block>
+      <!-- 轻提示 -->
+      <mp-loading show="{{loadingshow}}" />
+    </scroll-view>
+  </tabs>
+</view>

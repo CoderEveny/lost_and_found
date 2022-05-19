@@ -1,0 +1,27 @@
+<view class="bulletin-container">
+  <!-- logo -->
+  <NavBar navBarH="45px" fontSize="26px" isShow="none"></NavBar>
+  <!-- 搜索框 -->
+  <view class="serach" bindtap="toSearch">
+    <text class="search-letter">搜索</text>
+  </view>
+  <!-- tabs -->
+  <tabs tabs="{{tabs}}" 
+  bindtabsItemChange="tabsItemChange"
+  tabsStyle="{{tabsStyle}}">
+   <scroll-view class="scroll-wrap" scroll-y bindrefresherrefresh="refresh" refresher-triggered="{{triggered}}"
+   bindscrolltolower="loadMore" scroll-top='{{topNum}}' refresher-enabled="true">
+      <block wx:if="{{tabs[0].isActive && lossList.finding.list.length > 0}}">
+        <loss list="{{lossList.finding.list}}"></loss>
+      </block>
+      <block wx:if="{{tabs[1].isActive && lossList.found.list.length > 0}}">
+        <loss list="{{lossList.found.list}}"></loss>
+      </block>
+      <block wx:else>
+        <view class="no-info">~暂无信息~</view>
+      </block>
+   </scroll-view>
+   <!-- 轻提示 -->
+   <mp-loading show="{{loadingshow}}" />
+  </tabs>
+</view>

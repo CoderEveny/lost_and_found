@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "back": "/components/back/back",
+    "mp-dialog": "/ui/weui-miniprogram/dialog/dialog",
+    "i-toast": "/ui/iview-weapp/dist/toast/index"
+  }
+}

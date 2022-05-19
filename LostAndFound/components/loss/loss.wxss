@@ -1,0 +1,121 @@
+/* 为了使组件样式独立于页面 */
+/* 引入字体图标 */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 2715938 */
+  src: url('//at.alicdn.com/t/font_2715938_wvzxdc3fj3l.woff2?t=1649768552379') format('woff2'), url('//at.alicdn.com/t/font_2715938_wvzxdc3fj3l.woff?t=1649768552379') format('woff'), url('//at.alicdn.com/t/font_2715938_wvzxdc3fj3l.ttf?t=1649768552379') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-diamond:before {
+  content: "\e91f";
+}
+.icon-xiaolian:before {
+  content: "\ec80";
+}
+.icon-message:before {
+  content: "\e60c";
+}
+.icon-xiangqing:before {
+  content: "\e634";
+}
+.icon-ditu:before {
+  content: "\e68b";
+}
+.icon-dianhua:before {
+  content: "\e8ad";
+}
+.icon-kaoqin:before {
+  content: "\e7f5";
+}
+.icon-zuojiantou:before {
+  content: "\e609";
+}
+.icon-V:before {
+  content: "\e728";
+}
+.icon-shouye:before {
+  content: "\e61c";
+}
+.icon-gonggao:before {
+  content: "\e626";
+}
+.icon-fabu:before {
+  content: "\e605";
+}
+.icon-set-full2:before {
+  content: "\e979";
+}
+view,
+navigator,
+text,
+image {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.show-bulletin-container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.loss-item {
+  width: 46%;
+  height: 475rpx;
+  margin: 20rpx 10rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.loss-title {
+  width: 100%;
+  height: 50rpx;
+  margin: 8rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.loss-title .iconfont {
+  font-size: 56rpx;
+}
+.loss-title .loss-name {
+  text-align: center;
+  padding-left: 4rpx;
+  margin: 0 10rpx;
+  font-size: 28rpx;
+  flex: 1;
+}
+.loss-title .loss-tag {
+  width: 65rpx;
+  font-size: 18rpx;
+  color: #FA541C;
+  font-weight: bolder;
+}
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.loss-img {
+  width: 330rpx;
+  height: 250rpx;
+  overflow: hidden;
+  margin: 2%;
+}
+.loss-img image {
+  width: 100%;
+  height: 100%;
+}
+.loss-info {
+  display: flex;
+  flex-direction: column;
+}
+.loss-info text {
+  font-size: 26rpx;
+  margin: 5rpx 10rpx;
+}

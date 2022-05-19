@@ -1,0 +1,9 @@
+<view class="back-container">
+  <!-- 状态栏 -->
+  <view class="statusBar" style="height: {{statusbar}}px"></view>
+  <!-- 返回栏 -->
+  <view class="back">
+    <text class="iconfont icon-zuojiantou arrow" bindtap="backEvent"/>
+    <slot></slot>
+  </view>
+</view>

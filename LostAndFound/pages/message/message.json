@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "NavBar": "/components/comNavBar/comNavBar",
+    "mp-loading": "/ui/weui-miniprogram/loading/loading"
+  }
+}

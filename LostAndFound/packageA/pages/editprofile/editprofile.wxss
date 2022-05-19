@@ -1,0 +1,122 @@
+.change-profile-container {
+  height: 100vh;
+  background: #f4f4f4;
+}
+.change-image {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.show-image {
+  width: 100vw;
+  height: 160rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.show-image image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.show-image .active {
+  z-index: 1000;
+}
+.uploader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.change-info {
+  background: #fff;
+}
+.change-info view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.change-info view text {
+  padding: 30rpx 0;
+}
+.change-info view text:last-child {
+  color: #07a9f5;
+}
+.change-info .info-desc text {
+  color: #000 !important;
+}
+.change-info .info-desc .desc-style {
+  width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #979696 !important;
+  text-align: end;
+}
+.change-name-input {
+  width: 100%;
+}
+.change-name-input input {
+  width: 100%;
+  border: 3rpx solid #000;
+  padding: 10rpx 0;
+  font-size: 32rpx;
+}
+.change-desc-input {
+  width: 100%;
+}
+.change-desc-input textarea {
+  width: 100%;
+  border: 3rpx solid #000;
+  padding: 10rpx 0;
+  font-size: 32rpx;
+  height: 200rpx;
+}
+.edit-btn-group {
+  background: #fff;
+  width: 100vw;
+  height: 200rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.edit-btn-group text {
+  height: 100rpx;
+  line-height: 100rpx;
+  width: inherit;
+  text-align: center;
+}
+.edit-btn-group .edit-sign-out {
+  color: #07a9f5;
+}
+.edit-btn-group .edit-ok {
+  color: #f80e0e;
+}
+page {
+  background: #0e0d0d;
+}
+.bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 50rpx;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 210rpx;
+}
+button {
+  font-size: 27rpx;
+  z-index: 2;
+  padding: 0 20rpx;
+  height: 60rpx;
+  min-width: 70rpx;
+  margin: 0 10rpx;
+}

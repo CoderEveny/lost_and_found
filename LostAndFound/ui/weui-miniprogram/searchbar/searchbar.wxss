@@ -1,0 +1,4 @@
+.weui-search-bar__label text{display:inline-block;font-size:14px;vertical-align:middle}
+.weui-search-bar__box .weui-search-bar__input {
+  padding: 0;
+}

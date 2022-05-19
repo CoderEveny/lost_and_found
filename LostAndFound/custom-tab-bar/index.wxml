@@ -1,0 +1,19 @@
+<view class="tab-bar-container">
+  <view class="tab-bar-wrap">
+    <!-- 选项栏 -->
+    <view class="tabs-wrap">
+      <view wx:for="{{list}}" wx:key="text"
+      data-path="{{item.pagePath}}"
+      data-index="{{index}}"
+      bindtap="switchTab"
+      class="{{selected === index ? 'active':''}}">
+        <text class="iconfont {{item.iconPath}}"></text>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+     <!-- 头像图标 -->
+    <view class="img-wrap" bindtap="handleToProfile">
+      <image src="/static/profile.png" mode="scaleToFill"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "back": "/components/back/back",
+    "loss": "/components/loss/loss",
+    "mp-searchbar": "/ui/weui-miniprogram/searchbar/searchbar",
+    "mp-loading": "/ui/weui-miniprogram/loading/loading"
+  },
+  "disableScroll": true
+}

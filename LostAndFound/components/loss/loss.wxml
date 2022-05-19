@@ -1,0 +1,24 @@
+<view class="show-bulletin-container">
+  <view class="loss-item" bindtap="handleToDetail" data-id="{{item.id}}"
+    style="background: {{itemBgColor}}" wx:for="{{list}}" wx:key="id">
+    <!-- 失物名称 -->
+    <view class="loss-title">
+      <text class="iconfont icon-set-full2" />
+      <text class="loss-name ellipsis">{{item.loss_name}}</text>
+      <text class="loss-tag">{{item.isReview == 0 ? "审核中": item.isReview == 2 ? "已拒绝": item.isTake == 1 && item.loss_status != 2 ? "被揭取": ""}}</text>
+    </view>
+    <!-- 失物图片 -->
+    <view class="loss-img">
+      <image src="{{item.loss_pic}}" mode="widthFit"/>
+    </view>
+    <!-- 失物信息 -->
+    <wxs src='/utils/utils.wxs' module='filter' />
+    <view class="loss-info">
+      <text class="iconfont icon-V ellipsis">发布者：{{item.user_nickname}}</text>
+      <text class="iconfont icon-ditu ellipsis">地点：{{item.loss_place ? item.loss_place : '暂无地点'}}</text>
+      <text class="iconfont icon-kaoqin ellipsis">发布日期：{{filter.formatTime(item.publish_date,'yyyy-MM-dd')}}</text>
+    </view>
+  </view>
+  <!-- 替补空白 -->
+  <view class="loss-item" style="background:{{itemElseBgColor}}" wx-if="{{list.length % 2 != 0}}"></view>
+</view>

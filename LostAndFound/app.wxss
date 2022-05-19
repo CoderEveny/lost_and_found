@@ -1,0 +1,22 @@
+/**app.wxss**/
+@import "./style/iconfont.wxss";
+@import '/ui/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+page,view,text,image,navigator {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+page {
+  /* 定义主题颜色 */
+  --themeColor: rgb(247, 246, 238);
+  --themeLetterColor: rgb(138, 197, 168);
+  --themeTabsBgColor: rgba(61, 90, 76, 0.8);
+  --themeLossBgColor: rgba(78, 110, 95, 0.7);
+  /* 统一字体大小*/
+  font-size: 28rpx;
+  /* 让页面不卡顿 */
+  -webkit-overflow-scrolling : touch;
+}

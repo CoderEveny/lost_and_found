@@ -1,0 +1,12 @@
+<view class="nav-bar-container">
+  <!-- 状态栏 -->
+  <view class="statusBar" style="height: {{statusbar}}px"></view>
+  <!-- logo -->
+  <view class="nav-bar-wrap" style="height:{{navBarH}}">
+    <view class="nav-bar-title" style="font-size: {{fontSize}}">
+      <text class="iconfont icon-V" style="font-size: {{fontSize}}"/>
+      <text>Lost&Found</text>
+    </view>
+  </view>
+  <view class="chinese-title" style="display: {{isShow}}">失物招领系统</view>
+</view>

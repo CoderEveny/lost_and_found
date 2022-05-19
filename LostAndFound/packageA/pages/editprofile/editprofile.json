@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "back": "/components/back/back",
+    "mp-dialog": "/ui/weui-miniprogram/dialog/dialog",
+    "mp-actionSheet": "/ui/weui-miniprogram/actionsheet/actionsheet",
+    "image-cropper": "/components/image-cropper/image-cropper",
+    "i-toast": "/ui/iview-weapp/dist/toast/index"
+  }
+}

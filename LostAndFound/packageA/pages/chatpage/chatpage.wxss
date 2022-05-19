@@ -1,0 +1,74 @@
+.chat-name {
+  margin-left: 20rpx;
+}
+.chat-record-wrap {
+  width: 100vw;
+  height: calc(100vh - 200rpx);
+  background: #fff;
+}
+.send-msg-wrap {
+  width: 100vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #152134;
+  display: flex;
+  align-items: center;
+}
+.send-msg-wrap input {
+  background-color: #fff;
+  border-radius: 24rpx;
+  height: 55rpx;
+  width: 70%;
+  padding-left: 15rpx;
+  margin-left: 2%;
+}
+.send-msg-wrap button {
+  margin: 0 40rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  font-size: 28rpx;
+}
+.chat-item {
+  overflow: hidden;
+}
+.chat-user-com {
+  max-width: 60%;
+  display: flex;
+  margin: 20rpx 0 10rpx 15rpx;
+}
+.chat-user-com image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.chat-user-other {
+  float: left;
+}
+.chat-user-own {
+  max-width: 60%;
+  justify-content: end;
+  float: right;
+  margin: 20rpx 15rpx 10rpx 0 !important;
+}
+.contact-com {
+  flex: 1;
+  align-self: center;
+  padding: 10rpx 18rpx;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-all;
+  border-radius: 10rpx;
+}
+.contact-other {
+  background: #dedddd;
+  margin-left: 12rpx;
+}
+.contact-own {
+  background: #295fd3;
+  color: #fff;
+  margin-right: 12rpx;
+  position: relative;
+}

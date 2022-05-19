@@ -1,0 +1,66 @@
+<view class="change-profile-container">
+  <!-- 返回栏 -->
+  <back />
+  <!-- 上传照片 -->
+  <view class="change-image">
+    <view class='show-image'>
+      <text>头像</text>
+      <image src="{{userInfo.user_avatar}}" bindtap="showImg" class="active" mode="aspectFill"></image>
+    </view>
+    <view class='uploader' bindtap="handleToCropper"/>
+  </view>
+  <!-- 修改文字信息 -->
+  <view class="change-info">
+    <view class="info-name" bindtap="openDialog" data-type="nickname">
+      <text>昵称</text>
+      <text>{{userInfo.user_nickname}}</text>
+    </view>
+    <view class="info-ID">
+      <text>UID</text>
+      <text>{{userInfo.uid}}</text>
+    </view>
+    <view class="info-gender" bindtap="changeGender">
+      <text>性别</text>
+      <text>{{userInfo.user_gender === 0 ? '女' : '男'}}</text>
+    </view>
+    <view class="info-desc" bindtap="openDialog" data-type="desc">
+      <text>个性签名</text>
+      <text class="desc-style">{{userInfo.user_desc}}</text>
+    </view>
+  </view>
+
+  <!-- 按钮组 -->
+  <view class="edit-btn-group">
+    <text class="edit-ok" bindtap="openDialog" data-type="sure">确定修改</text>
+    <text class="edit-sign-out" bindtap="signOut">退出登录</text>
+  </view>
+  <!-- 修改系列 -->
+  <!-- 1.修改昵称 -->
+  <mp-dialog title="修改昵称" show="{{dialogShow}}" bindbuttontap="tapDialogButton" 
+  buttons="{{buttons}}" mask-closable="{{false}}">
+    <view class="change-name-input">
+      <input maxlength="8" bindinput="bindKeyInput" 
+      placeholder="请输入昵称" data-type="tempname"/>
+    </view>
+  </mp-dialog>
+  <!-- 2.修改性别 -->
+  <mp-actionSheet bindactiontap="actiontap" 
+  show="{{showActionsheet}}" actions="{{groups}}" 
+  title="请选择性别">
+  </mp-actionSheet>
+  <!-- 3.修改个性签名 -->
+  <mp-dialog title="修改个性签名" show="{{descShow}}" bindbuttontap="tapDescButton" 
+  buttons="{{buttons}}" mask-closable="{{false}}">
+    <view class="change-desc-input">
+      <textarea maxlength="24" bindinput="bindKeyInput" 
+      placeholder="个性签名不能超出25" data-type="tempdesc"></textarea>
+    </view>
+  </mp-dialog>
+  <!-- 5.是否确定修改 -->
+  <mp-dialog show="{{sureShow}}" buttons="{{buttons}}" mask-closable="{{false}}" 
+  bindbuttontap="updataProfile">
+    是否确认修改资料？
+  </mp-dialog>
+  <!-- 轻提示 -->
+  <i-toast id="toast" />
+</view>

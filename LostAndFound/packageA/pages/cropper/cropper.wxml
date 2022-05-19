@@ -1,0 +1,22 @@
+<view class="cropper-hint">
+    <back  />
+    <text class="cropper-hint-tips">点击中间裁剪框可查看裁剪后的图片</text>
+</view>
+<view style="width:100%;height:500rpx;">
+    <image-cropper id="image-cropper" bindload="cropperload" 
+    bindimageload="loadimage" bindtapcut="clickcut" 
+    limit_move="{{true}}" 
+    disable_rotate="{{true}}" 
+    width="{{width}}" 
+    height="{{height}}" 
+    imgSrc="{{src}}" 
+    disable_ratio="{{true}}">
+    </image-cropper>
+</view>
+<view class='cropper-bottom'>
+    <button class="button" catchtap='upload'>重新上传</button>
+    <button class="button" catchtouchstart='rotate' catchtouchend='end' data-type="rotate">旋转</button>
+    <button bindtap='imgsubmit'>确定</button>
+    <button bindtap='imgcancle'>取消</button>
+</view>    
+

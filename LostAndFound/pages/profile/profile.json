@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tabs": "/components/tabs/tabs",
+    "back": "/components/back/back",
+    "loss": "/components/loss/loss",
+    "mp-loading": "/ui/weui-miniprogram/loading/loading"
+  },
+  "onReachBottomDistance": 100
+}

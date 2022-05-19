@@ -1,0 +1,75 @@
+/* 为了使组件样式独立于页面 */
+/* 引入字体图标 */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 2715938 */
+  src: url('//at.alicdn.com/t/font_2715938_j0ddyu7n54m.woff2?t=1648893638757') format('woff2'), url('//at.alicdn.com/t/font_2715938_j0ddyu7n54m.woff?t=1648893638757') format('woff'), url('//at.alicdn.com/t/font_2715938_j0ddyu7n54m.ttf?t=1648893638757') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-message:before {
+  content: "\e60c";
+}
+.icon-xiangqing:before {
+  content: "\e634";
+}
+.icon-ditu:before {
+  content: "\e68b";
+}
+.icon-dianhua:before {
+  content: "\e8ad";
+}
+.icon-kaoqin:before {
+  content: "\e7f5";
+}
+.icon-zuojiantou:before {
+  content: "\e609";
+}
+.icon-V:before {
+  content: "\e728";
+}
+.icon-shouye:before {
+  content: "\e61c";
+}
+.icon-gonggao:before {
+  content: "\e626";
+}
+.icon-fabu:before {
+  content: "\e605";
+}
+.icon-set-full2:before {
+  content: "\e979";
+}
+view,
+navigator,
+text,
+image {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.back-container {
+  position: sticky;
+  top: 0;
+}
+.statusBar {
+  width: 100%;
+  background: #353b47;
+}
+.back {
+  width: 100%;
+  height: 80rpx;
+  background: #152134;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.back .arrow {
+  font-size: 44rpx;
+  padding-left: 15rpx;
+}
